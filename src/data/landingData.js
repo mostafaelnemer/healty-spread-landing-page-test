@@ -1,0 +1,234 @@
+import logo from '../assets/logo.webp';
+import product1 from '../assets/1.webp';
+import product2 from '../assets/2.webp';
+import product3 from '../assets/3.webp';
+import product4 from '../assets/4.webp';
+import product5 from '../assets/5.webp';
+import product6 from '../assets/prestiege.webp';
+import product7 from '../assets/coconut.webp';
+import product8 from '../assets/beanut_butter_high_protien.webp';
+import product9 from '../assets/beanut_butter.webp';
+import chocoDarkHazel  from '../assets/choco-dark-hazel.jpeg';
+import chocoDarkAlmond from '../assets/choco-dark-almond.jpeg';
+import chocoDarkPlain  from '../assets/choco-dark-plain.jpeg';
+import chocoMilkHazel  from '../assets/choco-milk-hazel.jpeg';
+import chocoMilkAlmond from '../assets/choco-milk-almond.jpeg';
+import chocoMilkPlain  from '../assets/choco-milk-plain.jpeg';
+import barDarkAlmond from '../assets/bar-dark-almond.webp';
+import barDarkHazel from '../assets/bar-dark-hazel.webp';
+import barDarkPlain from '../assets/bar-dark-plain.webp';
+import barMilkAlmond from '../assets/bar-milk-almond.webp';
+import barMilkHazel from '../assets/bar-milk-hazel.webp';
+import barMilkPlain from '../assets/bar-milk-plain.webp';
+
+export const productImages = [product4, product1, product2, product3, product6, product7, product5, product8, product9];
+
+// Hero carousel: spread ↔ choco bar alternating so the page speaks for both
+export const heroImages = [
+  product1, barMilkHazel,
+  product4, barMilkPlain,
+  product2, barDarkPlain,
+  product3, barMilkAlmond,
+  product6, barDarkHazel,
+  barDarkAlmond,
+];
+
+export const heroImageLabels = [
+  'أوجينال', 'ميلك بالبندق',
+  'أطفال', 'ميلك شيكولاتة بار',
+  'بروتين', 'ستيفيا دارك',
+  'فيجن', 'شيكولاتة باللوز',
+  'بريستيج 👑 (بندق أكتر)', 'دارك بالبندق',
+  'دارك باللوز',
+];
+
+export const spreadFlavors = [
+  { id: 'kids',    label: 'سبريد شيكولاتة أطفال 375 جرام',   shortLabel: 'أطفال',          emoji: '🧒', weight: '375 جرام', image: product4 },
+  { id: 'original',label: 'سبريد شيكولاتة أوجينال 375 جرام',  shortLabel: 'أوجينال',        emoji: '🍫', weight: '375 جرام', image: product1 },
+  { id: 'protein', label: 'سبريد شيكولاتة بروتين 375 جرام',   shortLabel: 'بروتين',         emoji: '💪', weight: '375 جرام', image: product2 },
+  { id: 'vegan',   label: 'سبريد شيكولاتة فيجن 375 جرام',     shortLabel: 'فيجن',           emoji: '🌱', weight: '375 جرام', image: product3 },
+  { id: 'prestige', label: 'سبريد شيكولاتة بريستيج 375 جرام', shortLabel: 'بريستيج', emoji: '👑', weight: '375 جرام', badge: '(بندق أكتر)', featured: true, image: product6 },
+  { id: 'coconut', label: 'سبريد جوز هند 375 جرام',            shortLabel: 'جوز هند',        emoji: '🥥', weight: '375 جرام', hidden: true, image: product7 },
+  { id: 'peanut',  label: 'زبدة فول سوداني 375 جرام',         shortLabel: 'زبدة فول سوداني', emoji: '🥜', weight: '375 جرام', hidden: true, image: product5 },
+  { id: 'highProtein', label: 'زبدة فول سوداني عالي البروتين 375 جرام', shortLabel: 'زبدة فول سوداني عالي البروتين', emoji: '💪', weight: '375 جرام', hidden: true, image: product8 },
+  { id: 'chocolatePeanut', label: 'زبدة فول سوداني شيكولاتة 375 جرام', shortLabel: 'زبدة فول سوداني شيكولاتة', emoji: '🍫', weight: '375 جرام', hidden: true, image: product9 },
+];
+
+export const chocoBarFlavors = [
+  { id: 'darkHazel',  label: 'شيكولاتة بار دارك بالبندق 40 جرام',  shortLabel: 'دارك بالبندق',  emoji: '🍫', weight: '40 جرام', image: chocoDarkHazel },
+  { id: 'darkAlmond', label: 'شيكولاتة بار دارك باللوز 40 جرام',   shortLabel: 'دارك باللوز',   emoji: '🍫', weight: '40 جرام', image: chocoDarkAlmond },
+  { id: 'darkPlain',  label: 'شيكولاتة بار دارك سادة 40 جرام',     shortLabel: 'دارك سادة',     emoji: '🍫', weight: '40 جرام', image: chocoDarkPlain },
+  { id: 'milkHazel',  label: 'شيكولاتة بار ميلك بالبندق 40 جرام',  shortLabel: 'ميلك بالبندق',  emoji: '🍫', weight: '40 جرام', image: chocoMilkHazel },
+  { id: 'milkAlmond', label: 'شيكولاتة بار ميلك باللوز 40 جرام',   shortLabel: 'ميلك باللوز',   emoji: '🍫', weight: '40 جرام', image: chocoMilkAlmond },
+  { id: 'milkPlain',  label: 'شيكولاتة بار ميلك سادة 40 جرام',     shortLabel: 'ميلك سادة',     emoji: '🍫', weight: '40 جرام', image: chocoMilkPlain },
+];
+
+export const colaFlavors = [
+  { id: 'cola',  label: 'كولا 350 مل',        shortLabel: 'كولا',        emoji: '🥤', volume: '350 مل' },
+  { id: 'lemon', label: 'ليمون نعناع 350 مل', shortLabel: 'ليمون نعناع', emoji: '🍋', volume: '350 مل' },
+];
+
+export const egyptGovs = ['القاهرة', 'الجيزة', 'الإسكندرية', 'طنطا', 'المنصورة', 'السويس', 'دمياط'];
+
+export const landingData = {
+  brand: {
+    logo,
+    name: 'Healthy & Tasty',
+    tagline: 'Healthy food for all people',
+  },
+  nav: [
+    { label: 'المميزات', href: '#benefits' },
+    { label: 'العروض',   href: '#offers'   },
+    { label: 'اطلب الآن', href: '#offers'  },
+  ],
+  hero: {
+    eyebrow: 'Healthy Spread & Choco Bar 🍫',
+    title: 'استمتع بـ هيلثي سبريد وشيكولاتة بار اللي بتحبهم... بطريقة تناسب حياتك الصحية',
+    subtitle:
+      'سبريد غني وشيكولاتة بار لذيذة من غير سكر مضاف، مناسبين للدايت والكيتو ومرضى السكر من غير ما تحرم نفسك.',
+    primaryCta: 'اطلب دلوقتي',
+    secondaryCta: 'شوف العروض',
+    images: heroImages,
+    labels: heroImageLabels,
+    stats: [
+      { value: '0%', label: 'سكر مضاف' },
+      { value: 'Keto', label: 'مناسب للدايت' },
+      { value: 'Stevia', label: 'محلى بالاستيفيا' },
+    ],
+  },
+  benefits: [
+    'مناسب للدايت والكيتو',
+    'مناسب لمرضى السكر',
+    'محلى بالاستيفيا',
+    'منخفض السعرات الحرارية',
+    'بدون سكر مضاف',
+    'خالية من الزيوت المهدرجة',
+  ],
+  audience: {
+    title: 'مناسب لمين؟',
+    description: 'Healthy Spread اختيار ذكي لأكتر من روتين صحي، من غير حرمان ومن غير تعقيد.',
+    items: [
+      { label: 'الرياضيين',                  icon: '🏋️' },
+      { label: 'مرضى السكر',                 icon: '🩺' },
+      { label: 'متبعي الكيتو دايت',           icon: '🥑' },
+      { label: 'متبعي نظام منخفض السعرات',    icon: '⚖️' },
+    ],
+  },
+  product: {
+    title: 'طعم حلو من غير إحساس بالذنب',
+    description:
+      'سبريد غني يناسب الفطار، السناك، والحلويات الصحية. معمول عشان يديك إحساس الشوكولاتة اللي بتحبه بشكل أخف وأنسب للاستخدام اليومي.',
+    gallery: [
+      { title: 'طعم غني', note: 'قوام كريمي وطعم شوكولاتة واضح' },
+      { title: 'مكونات أخف', note: 'مناسب للاستخدام اليومي بدون سكر مضاف' },
+      { title: 'سناك سريع', note: 'ينفع مع الفطار أو بين الوجبات' },
+      { title: 'اختيار صحي', note: 'مناسب لأسلوب حياة أخف' },
+      { title: 'بريستيج', note: 'نكهة فاخرة وغنية ببندق أكتر' },
+      { title: 'جوز هند', note: 'نكهة جوز هند استوائية منعشة' },
+      { title: 'زبدة فول سوداني', note: 'نكهة فول سوداني غنية بدون سكر مضاف' },
+      { title: 'زبدة فول سوداني عالي البروتين', note: 'مثالي للرياضيين ومحبي البروتين' },
+      { title: 'زبدة فول سوداني شيكولاتة', note: 'مزيج مثالي من فول السوداني والشوكولاتة' },
+    ],
+  },
+  offersIntro: {
+    eyebrow: 'اختار العرض المناسب ليك 👇',
+    title: 'الحق العروض قبل ما تخلص',
+    description: 'كل العروض شاملة الدفع عند الاستلام 💳 + التوصيل مجاناً 🚚',
+  },
+  offers: [
+    {
+      id: 'two-jars',
+      title: 'العرض الأول',
+      amount: 'عرض القطعتين ب 499 جنيه بدلاً من 600 جنيه',
+      description: '',
+      price: 499,
+      originalPrice: 600,
+      saving: 101,
+      unitsPerPack: 2,
+      maxFlavors: 9,
+      badge: 'توفير 🔥',
+      accent: '#5f2d91',
+      note: '',
+    },
+    {
+      id: 'three-jars',
+      title: 'العرض الثاني',
+      amount: 'عرض ال 3 قطع ب 699 جنيه بدلاً من 900 جنيه',
+      description: '',
+      price: 699,
+      originalPrice: 900,
+      saving: 201,
+      unitsPerPack: 3,
+      maxFlavors: 9,
+      badge: '⭐ الأكثر طلبًا',
+      accent: '#b11730',
+      note: '',
+    },
+    {
+      id: 'four-jars',
+      title: 'العرض الثالث',
+      amount: 'عرض ال 4 قطع ب 899 جنيه بدلاً من 1200 جنيه',
+      description: '',
+      price: 899,
+      originalPrice: 1200,
+      saving: 301,
+      unitsPerPack: 4,
+      maxFlavors: 9,
+      badge: 'أكبر توفير 🔥',
+      accent: '#0f766e',
+      note: '',
+    },
+    {
+      id: 'choco-bar',
+      title: 'عرض شيكولاتة بار',
+      amount: 'اشتري 4 شيكولاتة 40 جرام واحصل على الخامسة هدية ب 220 جنيه بدلاً من 275 جنيه',
+      description: '',
+      price: 220,
+      originalPrice: 275,
+      saving: 55,
+      badge: '🎁 الخامسة هدية',
+      accent: '#b11730',
+      note: '',
+      configuration: { type: 'chocoBar', total: 5 },
+    },
+    {
+      id: 'spread-choco-bar',
+      title: 'عرض سبريد + شيكولاتة بار',
+      amount: 'اشتري 2 شيكولاتة سبريد + 2 شيكولاتة بار ب 599 جنيه بدلاً من 710 جنيه',
+      description: '',
+      price: 599,
+      originalPrice: 710,
+      saving: 111,
+      unitsPerPack: 2,
+      maxFlavors: 9,
+      badge: '✨ عرض مميز',
+      accent: '#5f2d91',
+      note: '',
+      configuration: { type: 'spreadAndChocoBar', spreadUnits: 2, chocoBarUnits: 2 },
+    },
+  ],
+  loveReasons: {
+    eyebrow: 'ليه العملاء بيحبوا Healthy Spread؟',
+    title: 'لأنها بتديك الطعم اللي بتحبه بشكل أخف',
+    items: [
+      { label: 'طعم حلو من غير إحساس بالذنب',              icon: '😍' },
+      { label: 'اختيار يناسب أسلوب الحياة الصحي',           icon: '🌿' },
+      { label: 'مكونات أخف وأنسب للاستخدام اليومي',         icon: '✅' },
+      { label: 'حل مثالي للحلويات والسناك الصحية',           icon: '🍽️' },
+    ],
+  },
+  form: {
+    title: 'بياناتك',
+    subtitle: 'أدخل بياناتك وهنكلمك لتأكيد الطلب',
+    submitLabel: 'تأكيد الطلب',
+    successMessage: 'تم تسجيل طلبك! سيتم التواصل معاك في أقرب وقت لتأكيد الطلب.',
+    validationMessage: 'من فضلك املأ كل الحقول المطلوبة بشكل صحيح.',
+  },
+  footer: {
+    note: 'Healthy Spread بطعم غني يناسب حياتك الصحية.',
+  },
+};
+
+export const SHIPPING_FEE = 0;
+
+export const formatPrice = (amount) => `${amount} جنيه`;

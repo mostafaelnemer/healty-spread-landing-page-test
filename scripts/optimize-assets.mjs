@@ -1,0 +1,61 @@
+/**
+ * Generates WebP images and WOFF2 fonts for production.
+ * Run: node scripts/optimize-assets.mjs
+ */
+import { mkdir, copyFile } from 'node:fs/promises';
+import { dirname, join, basename } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import sharp from 'sharp';
+import { readFileSync, writeFileSync } from 'node:fs';
+import ttf2woff2 from 'ttf2woff2';
+
+const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+const assets = join(root, 'src', 'assets');
+const fontsDir = join(assets, 'fonts');
+const publicDir = join(root, 'public');
+
+const images = [
+  '1.png', '2.png', '3.png', '4.png', '5.png',
+  '3ard.jpeg', '3ard2.jpeg', '3ard3.jpeg', 'logo.png',
+  'bundle/bundle.jpeg', 'bundle/bundle2.jpeg',
+  'beanut_butter.png', 'beanut_butter_high_protien.png', 'coconut.png', 'prestiege.png',
+  'bar-dark-almond.png', 'bar-dark-hazel.png', 'bar-dark-plain.png',
+  'bar-milk-almond.png', 'bar-milk-hazel.png', 'bar-milk-plain.png',
+];
+
+// Offer/bundle art is displayed at ~90-96px, but sources are 1254px.
+// Cap them at 800px (still 8x the display size — retina-safe) to cut
+// page weight roughly in half with no visible difference.
+const LARGE_MAX_WIDTH = 800;
+const large = new Set([
+  '3ard.jpeg', '3ard2.jpeg', '3ard3.jpeg',
+  'bundle/bundle.jpeg', 'bundle/bundle2.jpeg',
+  'bar-dark-almond.png', 'bar-dark-hazel.png', 'bar-dark-plain.png',
+  'bar-milk-almond.png', 'bar-milk-hazel.png', 'bar-milk-plain.png',
+]);
+
+for (const file of images) {
+  const input = join(assets, file);
+  const out = join(assets, file.replace(/\.(png|jpe?g)$/i, '.webp'));
+  let pipe = sharp(input);
+  if (large.has(file)) {
+    pipe = pipe.resize({ width: LARGE_MAX_WIDTH, withoutEnlargement: true });
+  }
+  await pipe
+    .webp({ quality: 82 })
+    .toFile(out);
+  console.log(`webp: ${basename(out)}`);
+}
+
+await mkdir(publicDir, { recursive: true });
+await mkdir(join(publicDir, 'fonts'), { recursive: true });
+await copyFile(join(assets, '1.webp'), join(publicDir, 'hero-lcp.webp'));
+console.log('public/hero-lcp.webp');
+
+for (const ttf of ['Tajawal-Regular.ttf', 'Tajawal-Bold.ttf']) {
+  const input = join(fontsDir, ttf);
+  const out = join(fontsDir, ttf.replace('.ttf', '.woff2'));
+  writeFileSync(out, ttf2woff2(readFileSync(input)));
+  await copyFile(out, join(publicDir, 'fonts', basename(out)));
+  console.log(`woff2: ${basename(out)}`);
+}
