@@ -176,7 +176,7 @@ export default function OffersSection({ intro, offers, offersReady, onCheckout, 
                   ) : offer.configuration?.type === 'spreadAndChocoBar' ? (
                     <p className="bundle-row-meta">{shippingLabel(offer, 'spread') ? `${shippingLabel(offer, 'spread')} · ` : ''}⚖️ 375 جرام للسبريد · ⚖️ 40 جرام للشيكولاتة بار</p>
                   ) : (
-                    <p className="bundle-row-meta">{shippingLabel(offer, 'spread') ? `${shippingLabel(offer, 'spread')} · ` : ''}⚖️ 375 11جرام لكل برطمان</p>
+                    <p className="bundle-row-meta">{shippingLabel(offer, 'spread') ? `${shippingLabel(offer, 'spread')} · ` : ''}⚖️ 375 جرام لكل برطمان</p>
                   )}
 
                   {inCart ? (
