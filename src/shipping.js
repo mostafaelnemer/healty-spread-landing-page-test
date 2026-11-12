@@ -36,7 +36,7 @@ export function cartShippingLabel(items, site) {
 
 export function shippingSummary(offers, site) {
   if (offers.length && offers.every(offer => shippingFee(offer, site) === 0)) return 'كل العروض بتوصيل مجاني 🚚'
-  return 'الشحن حسب العرض؛ تُحسب أعلى رسوم مرة واحدة على الطلب'
+  return 'الشحن حسب العرض؛ تُحسب رسوم مرة واحدة على الطلب'
 }
 
 export function shippingOrderNote(notes) {
